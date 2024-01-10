@@ -11,7 +11,7 @@ const SearchPage = ({ params: { term } }: Props) => {
 
   const termToUse = decodeURI(term);
 
-  return <div></div>;
+  return <main></main>;
 };
 
 export default SearchPage;
