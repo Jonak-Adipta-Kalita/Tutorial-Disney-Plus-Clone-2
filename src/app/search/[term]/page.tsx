@@ -6,10 +6,10 @@ type Props = {
   };
 };
 
-const SearchPage = ({ params: { term } }: Props) => {
-  if (!term) return notFound();
+const SearchPage = ({ params: { term: paramTerms } }: Props) => {
+  if (!paramTerms) return notFound();
 
-  const termToUse = decodeURI(term);
+  const term = decodeURI(paramTerms);
 
   return <main></main>;
 };
