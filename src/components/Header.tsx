@@ -4,7 +4,7 @@ import ThemeToggler from "./theme/ThemeToggler";
 
 const Header = () => {
   return (
-    <header>
+    <header className="fixed">
       <Link href={"/"}>
         <Image
           src="https://links.papareact.com/a943ae"
