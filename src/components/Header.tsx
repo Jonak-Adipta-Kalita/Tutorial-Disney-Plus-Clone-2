@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggler from "./theme/ThemeToggler";
 
 const Header = () => {
   return (
@@ -10,13 +11,13 @@ const Header = () => {
           alt="Logo"
           height={100}
           width={120}
-          className="cursor-pointer invert"
+          className="cursor-pointer invert-0 dark:invert"
         />
       </Link>
-      <div className="flex items-center space-x-2">
+      <div className="flex space-x-2">
         {/* GenreDropdown */}
         {/* SearchInput */}
-        {/* ThemeToggler */}
+        <ThemeToggler />
       </div>
     </header>
   );
