@@ -5,7 +5,7 @@ import ThemeToggler from "./theme/ThemeToggler";
 const Header = () => {
   return (
     <header className="fixed w-ful z-20 top-0 items-center justify-between flex p-5 bg-gradient-to-t from-transparent via-gray-900/25 to-gray-900">
-      <Link href={"/"}>
+      <Link href={"/"} className="mr-10">
         <Image
           src="https://links.papareact.com/a943ae"
           alt="Logo"
