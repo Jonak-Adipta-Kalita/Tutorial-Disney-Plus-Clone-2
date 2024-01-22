@@ -1,4 +1,15 @@
+import { ChevronDownIcon } from "lucide-react";
 import { Genre } from "../../typings";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import Link from "next/link";
+import { ScrollArea } from "./ui/scroll-area";
 
 type Props = {};
 
@@ -19,7 +30,30 @@ const GenreDropdown = async (props: Props) => {
   const response = await fetch(url, options);
   const genres = (await response.json()).genres as Genre[];
 
-  return <div></div>;
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        asChild
+        className="text-white flex justify-center items-center"
+      >
+        Genre <ChevronDownIcon className="ml-1" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>Select a Genre</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+
+        <ScrollArea>
+          {genres.map((genre) => (
+            <DropdownMenuItem key={genre.id}>
+              <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
+                {genre.name}
+              </Link>
+            </DropdownMenuItem>
+          ))}
+        </ScrollArea>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 };
 
 export default GenreDropdown;
