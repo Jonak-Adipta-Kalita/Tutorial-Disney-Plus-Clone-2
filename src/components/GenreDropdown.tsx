@@ -32,7 +32,7 @@ const GenreDropdown = async (props: Props) => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="text-white flex justify-center items-center">
+      <DropdownMenuTrigger className="text-white flex justify-center items-center outline-none">
         Genre <ChevronDownIcon className="ml-1" />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -40,7 +40,7 @@ const GenreDropdown = async (props: Props) => {
         <DropdownMenuSeparator />
         <ScrollArea>
           {genres.map((genre) => (
-            <DropdownMenuItem key={genre.id}>
+            <DropdownMenuItem key={genre.id} className="cursor-pointer">
               <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
                 {genre.name}
               </Link>
