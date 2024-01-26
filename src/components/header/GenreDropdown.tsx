@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "lucide-react";
-import { Genre } from "../../typings";
+import { Genre } from "../../../typings";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,9 +7,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from "../ui/dropdown-menu";
 import Link from "next/link";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "../ui/scroll-area";
 
 type Props = {};
 

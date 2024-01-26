@@ -1,4 +1,4 @@
-import MoviesCarousel from "@/components/MoviesCarousel";
+import MoviesCarousel from "@/components/movies/MoviesCarousel";
 import { getCarouselMovies } from "@/lib/getMovies";
 
 export default async () => {

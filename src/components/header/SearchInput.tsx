@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Form, FormField, FormItem } from "./ui/form";
-import { Input } from "./ui/input";
+import { Form, FormField, FormItem } from "../ui/form";
+import { Input } from "../ui/input";
 
 const formSchema = z.object({
   input: z.string().min(2).max(50),
