@@ -24,7 +24,7 @@ const fetchFromTMDB = async (url: URL, cacheTime?: number) => {
 };
 
 export const getCarouselMovies = async (endpoint: string) => {
-  const url = new URL(`https://api.themoviedb.org/3/${endpoint}`);
+  const url = new URL(`https://api.themoviedb.org/3/movie/${endpoint}`);
   return (await fetchFromTMDB(url)).results;
 };
 

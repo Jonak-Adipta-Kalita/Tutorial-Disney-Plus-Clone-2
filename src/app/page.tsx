@@ -9,7 +9,7 @@ export default async () => {
   return (
     <main>
       {/* CarouselBannerWrapper */}
-      <div className="flex flex-col space-y-2 xl:-mt-40">
+      <div className="flex flex-col space-y-2 xl:-mt-48">
         <MoviesCarousel movies={upcomingMovies} title="Upcoming" />
         <MoviesCarousel movies={topRatedMovies} title="Top Rated" />
         <MoviesCarousel movies={popularMovies} title="Popular" />
