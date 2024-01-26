@@ -6,7 +6,7 @@ import GenreDropdown from "./GenreDropdown";
 
 const Header = () => {
   return (
-    <header className="fixed w-full z-20 top-0 items-center justify-between flex p-5 bg-gradient-to-t from-transparent via-gray-900/25 to-gray-900">
+    <header className="fixed w-full z-50 top-0 items-center justify-between flex p-5 bg-gradient-to-t from-transparent via-gray-900/25 to-gray-900">
       <Link href={"/"} className="mr-10">
         <Image
           src="https://links.papareact.com/a943ae"
