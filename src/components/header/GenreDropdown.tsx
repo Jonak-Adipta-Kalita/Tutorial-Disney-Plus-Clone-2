@@ -40,8 +40,11 @@ const GenreDropdown = async (props: Props) => {
         <DropdownMenuSeparator />
         <ScrollArea className="h-72">
           {genres.map((genre) => (
-            <DropdownMenuItem key={genre.id} className="cursor-pointer">
-              <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
+            <DropdownMenuItem key={genre.id}>
+              <Link
+                href={`/genre/${genre.id}?genre=${genre.name}`}
+                className="cursor-pointer w-full"
+              >
                 {genre.name}
               </Link>
             </DropdownMenuItem>
