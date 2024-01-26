@@ -18,7 +18,10 @@ const SearchPage = async ({ params: { term: paramTerms } }: Props) => {
   return (
     <main className="max-w-7xl mx-auto">
       <div className="flex flex-col space-y-4 mt-32 xl:mt-42">
-        <h2 className="text-6xl font-bold px-10">Results for: "{term}"</h2>
+        <h1 className="text-5xl font-bold px-10 mb-5">
+          Results for: "
+          <span className="text-gray-700 dark:text-gray-200">{term}</span>"
+        </h1>
         <MoviesCarousel movies={movies} title="Movies" isVertical />
         <MoviesCarousel movies={popularMovies} title="You may also like" />
       </div>
