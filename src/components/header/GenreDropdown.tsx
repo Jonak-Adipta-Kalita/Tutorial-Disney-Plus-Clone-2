@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "lucide-react";
-import { Genre } from "../../../typings";
+import { Genre } from "@/typings";
 import {
   DropdownMenu,
   DropdownMenuContent,

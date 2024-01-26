@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Movie } from "../../../typings";
+import { Movie } from "@/typings";
 import MovieCard from "./MovieCard";
 
 type Props = {

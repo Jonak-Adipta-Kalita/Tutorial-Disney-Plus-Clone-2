@@ -1,4 +1,4 @@
-import { SearchResults } from "../../typings";
+import { SearchResults } from "@/typings";
 
 const fetchFromTMDB = async (url: URL, cacheTime?: number) => {
   url.searchParams.set("include_video", "false");
