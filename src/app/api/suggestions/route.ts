@@ -17,6 +17,6 @@ export const GET = async (request: Request) => {
 
     return Response.json({ message });
   } catch (error) {
-    return { content: "No Money ;-; (yet)" };
+    return Response.json({ message: "No Money ;-; (yet)" });
   }
 };

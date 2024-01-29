@@ -1,3 +1,4 @@
+import AISuggestion from "@/components/ai/Suggestion";
 import MoviesCarousel from "@/components/movies/MoviesCarousel";
 import { getCarouselMovies, getSearchedMovies } from "@/lib/getMovies";
 import { notFound } from "next/navigation";
@@ -22,6 +23,7 @@ const SearchPage = async ({ params: { term: paramTerms } }: Props) => {
           Results for: "
           <span className="text-gray-700 dark:text-gray-200">{term}</span>"
         </h1>
+        <AISuggestion term={term} />
         <MoviesCarousel movies={movies} title="Movies" isVertical />
         <MoviesCarousel movies={popularMovies} title="You may also like" />
       </div>
