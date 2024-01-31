@@ -1,4 +1,4 @@
-import AISuggestion from "@/components/ai/Suggestion";
+import AISuggestion from "@/components/AISuggestion";
 import MoviesCarousel from "@/components/movies/MoviesCarousel";
 import { getCarouselMovies, getSearchedMovies } from "@/lib/getMovies";
 import { notFound } from "next/navigation";

@@ -1,3 +1,4 @@
+import AISuggestion from "@/components/AISuggestion";
 import MoviesCarousel from "@/components/movies/MoviesCarousel";
 import { getDiscoverMovies } from "@/lib/getMovies";
 import { notFound } from "next/navigation";
@@ -25,6 +26,7 @@ const GenrePage = async ({
           Results for: "
           <span className="text-gray-700 dark:text-gray-200">{genre}</span>"
         </h1>
+        <AISuggestion term={genre} />
       </div>
       <MoviesCarousel title={genre} movies={movies} isVertical />
     </main>

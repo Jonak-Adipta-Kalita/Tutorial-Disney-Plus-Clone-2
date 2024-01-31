@@ -32,9 +32,7 @@ const AISuggestion = ({ term }: { term: string }) => {
         <div className="animate-pulse rounded-full bg-gradient-to-t from-white h-10 w-10 border-2 flex-shrink-0 border-white" />
 
         <div>
-          <p className="text-sm text-gray-400">
-            AI (Azure Functions) Assistant Suggests:{" "}
-          </p>
+          <p className="text-sm text-gray-400">AI Assistant Suggests: </p>
           <p className="italic text-xl">"{data.message}"</p>
         </div>
       </>
