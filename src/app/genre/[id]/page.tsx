@@ -1,5 +1,6 @@
 import AISuggestion from "@/components/AISuggestion";
 import MoviesCarousel from "@/components/movies/MoviesCarousel";
+import { getGenres } from "@/lib/getGenres";
 import { getDiscoverMovies } from "@/lib/getMovies";
 import { notFound } from "next/navigation";
 
@@ -7,17 +8,24 @@ type Props = {
   params: {
     id: string;
   };
-  searchParams: {
-    genre: string;
-  };
 };
 
-const GenrePage = async ({
-  params: { id },
-  searchParams: { genre },
-}: Props) => {
-  if (!id || !genre) return notFound();
+export const revalidate = 60 * 60 * 24;
+
+export const generateStaticParams = async () => {
+  const genres = await getGenres();
+
+  return genres.map((genre) => ({
+    id: genre.id.toString(),
+  }));
+};
+
+const GenrePage = async ({ params: { id } }: Props) => {
+  if (!id) return notFound();
   const movies = await getDiscoverMovies(id);
+
+  const genres = await getGenres();
+  const genre = genres.find((genre) => genre.id === Number(id))?.name!;
 
   return (
     <main className="max-w-7xl mx-auto">

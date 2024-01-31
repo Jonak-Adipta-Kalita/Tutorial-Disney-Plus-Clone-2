@@ -1,5 +1,4 @@
 import { ChevronDownIcon } from "lucide-react";
-import { Genre } from "@/typings";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,25 +9,12 @@ import {
 } from "../ui/dropdown-menu";
 import Link from "next/link";
 import { ScrollArea } from "../ui/scroll-area";
+import { getGenres } from "@/lib/getGenres";
 
 type Props = {};
 
 const GenreDropdown = async (props: Props) => {
-  const url = "https://api.themoviedb.org/3/genre/movie/list?language=en";
-
-  const options: RequestInit = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
-    },
-    next: {
-      revalidate: 60 * 60 * 24,
-    },
-  };
-
-  const response = await fetch(url, options);
-  const genres = (await response.json()).genres as Genre[];
+  const genres = await getGenres();
 
   return (
     <DropdownMenu>
@@ -42,7 +28,7 @@ const GenreDropdown = async (props: Props) => {
           {genres.map((genre) => (
             <DropdownMenuItem key={genre.id}>
               <Link
-                href={`/genre/${genre.id}?genre=${genre.name}`}
+                href={`/genre/${genre.id}`}
                 className="cursor-pointer w-full"
               >
                 {genre.name}
